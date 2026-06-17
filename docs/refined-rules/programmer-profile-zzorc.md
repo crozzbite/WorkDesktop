@@ -80,10 +80,18 @@ Síntoma central: abre loops de calidad excepcional y casi nunca los cierra ni l
 
 ---
 
-## 6. Cadencia de revisión
+## 6. Cadencia de revisión (afilar el filo — waterstone)
 
-- **Cada 6 meses** se revisa la vigencia de las reglas y este perfil; se actualiza lo obsoleto y se marca ✓.
-- **Próxima revisión:** 2026-12-17.
+El filo no se arruina de golpe; se desafila poco a poco sin notarse. Por eso el afilado es escalonado:
+
+| Nivel | Cada cuánto | Qué es |
+|-------|-------------|--------|
+| **Asentador (honing)** | Continuo, cada sesión | Automático: `📌 GUARDAR EN ENGRAM` + stopper `🛑 DESVÍO`. Mantiene el filo recto. |
+| **Piedra fina** | Mensual (~30 min) | Chequeo ligero: loops abiertos vs cerrados del mes; revisar `openspec/changes` sin archivar; corregir desvíos de foco. |
+| **Waterstone profunda** | Cada 6 meses | Auditoría FODA completa: revisar perfil, canon y reglas; actualizar lo obsoleto y marcar ✓. |
+
+- **Próxima piedra fina:** 2026-07-17.
+- **Próxima waterstone (full FODA + reglas):** 2026-12-17.
 - **Deuda de canon abierta (arreglar ya, no esperar):** la regla `NEVER npm / ONLY bun` (`00-identity-refined.md:18`, `non-negotiables.md:17,38`) contradice la realidad del repo (`DEPLOYMENT-MASTER-PLAN.md:36`, npm ci obligatorio para Angular SSR en Docker). Nueva redacción propuesta: *"`bun` por defecto; `npm` permitido solo donde una restricción técnica documentada lo exija, registrada como excepción con su razón."*
 
 ---
