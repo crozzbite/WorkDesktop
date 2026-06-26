@@ -1,7 +1,7 @@
 # SkullRender Rules – Version Index
 
 > **Purpose:** Track which rule sets are current (✓) so we can compare and roll back if needed.  
-> **Updated:** 2025-03-15 (ISO 8601).
+> **Updated:** 2026-06-25 (ISO 8601).
 
 ---
 
@@ -23,8 +23,12 @@
 | `docs/refined-rules/02-patterns-refined.md`  | 1.0 | ✓ | Architectural patterns + when to use each |
 | `docs/refined-rules/05-cognitive-refined.md` | 1.0 | ✓ | Cognitive layer + LangSmith observability |
 | `docs/refined-rules/07-security-refined.md`  | 1.0 | ✓ | Security + context matrix (Web/API/LLM/Agentic) |
-| `docs/refined-rules/08-workflow-refined.md`  | 1.0 | ✓ | Workflow phases + SDLC alignment + STOPs |
+| `docs/refined-rules/08-workflow-refined.md`  | 1.2 | ✓ | Workflow phases + SDLC alignment + STOPs (+ Strict TDD ref, JD gate Rule 09) |
+| `docs/refined-rules/09-agent-loops-refined.md` | 1.1 | ✓ | Agent loops: JD triggers, persistence, human-in-the-loop |
+| `docs/refined-rules/09-strict-tdd-refined.md` | 1.0 | ✓ | Strict TDD apply protocol: Safety net → Understand → RED → GREEN → Triangulate → Refactor |
 | `docs/refined-rules/programmer-profile-zzorc.md` | 1.0 | ✓ | Perfil de personalidad de zzorc (pacto samurai-espada, FODA, Ley del Entierro, comportamientos activos) |
+| `docs/refined-rules/persona-cerbero.md` | 1.1 | ✓ | Persona Cerbero (+ JD overlay Rule 09; JD general = Gentleman) |
+| `docs/refined-rules/skullrender-cicd-standard.md` | 1.0 | ✓ | CI/CD standard: CI → GHCR → AKS OIDC; vars/secrets/local.env; reference DnDApp |
 
 ---
 

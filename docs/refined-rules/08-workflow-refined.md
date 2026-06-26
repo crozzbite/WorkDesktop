@@ -1,12 +1,12 @@
 ---
-version: 1.0
+version: 1.2
 current: true
 description: Workflow phases + SDLC alignment + STOPs. Refined Rule 08.
 ---
 
 # Rule 08 Refined: The Workflow (Ritual)
 
-**Version:** 1.0 ✓ (current)
+**Version:** 1.2 ✓ (current)
 
 ---
 
@@ -17,6 +17,8 @@ description: Workflow phases + SDLC alignment + STOPs. Refined Rule 08.
 - **STOP** if we are implementing without aligning to the **change's tasks** (`tasks.md`). OpenSpec works change-by-change and each change has a task workflow (proposal → specs → design → **tasks**). Implementation must trace to tasks in that change; when the project tracks **sprints** (e.g. phased tasks or archived changes like `archive/YYYY-MM-DD-sprint-N-name`), ensure we are working in the current change/sprint so we do not lose the thread. If in doubt, ask which change or sprint we are in before coding.
 - **STOP** if the implementation does not match the approved design. Refuse and request alignment.
 - **STOP** before merge if tests fail or (for domain) mutation score is below the bar. No “merge now, fix later.”
+- **STOP** before `/sdd-archive` if Judgment Day for the **complete change** has not reached `JUDGMENT: APPROVED` (see Rule 09). User may accept `ESCALATED` explicitly.
+- **STOP** before deleting tests without a one-round Judgment Day on whether the new contract covers the old (Rule 09, Trigger F).
 
 ---
 
@@ -52,7 +54,11 @@ description: Workflow phases + SDLC alignment + STOPs. Refined Rule 08.
 
 ## Phase 3: Execution (The Muscle)
 
-1. **TDD:** Write the failing test for the use case first.
+When `/sdd-apply` runs with **Strict TDD Mode** active, each task follows the full cycle in **`docs/refined-rules/09-strict-tdd-refined.md`**:
+
+**Safety net → Understand → RED → GREEN → Triangulate → Refactor**
+
+1. **Strict TDD (apply):** Behavior-first design — test defines the contract; production code follows. See Rule 09 and `09-strict-tdd-refined.md`.
 2. **Domain:** Implement pure logic; no framework imports in domain.
 3. **Application:** Wire domain (use cases).
 4. **Adapters:** Controllers, DB repos, external APIs.
@@ -64,10 +70,12 @@ description: Workflow phases + SDLC alignment + STOPs. Refined Rule 08.
 
 ## Phase 4: Verification (The Soul)
 
-1. **Audit:** Check against ISO 25010 (quality attributes).
-2. **Security:** Run checks for OWASP (by context: Web/API/LLM/Agentic).
-3. **Review:** Walkthrough artifact with stakeholder if needed.
-4. **Merge:** Archive OpenSpec change; merge only when all above are satisfied.
+1. **Verify:** Run `/sdd-verify` — spec alignment, Gauntlet, Strict TDD compliance when active.
+2. **Judgment Day:** Adversarial review (`judgment-day` skill) — **one round per complete change**, gate before archive. See **Rule 09** (`docs/refined-rules/09-agent-loops-refined.md`).
+3. **Audit:** Check against ISO 25010 (quality attributes).
+4. **Security:** Run checks for OWASP (by context: Web/API/LLM/Agentic); Cerbero overlay on JD when triggered.
+5. **Review:** Walkthrough artifact with stakeholder if needed.
+6. **Archive & merge:** `/sdd-archive` only after JD `APPROVED` (or explicit user escalation); human merges when all above are satisfied.
 
 ---
 
