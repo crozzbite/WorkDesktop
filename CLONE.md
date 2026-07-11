@@ -5,9 +5,11 @@ This branch (`governance/copilot-portable`) is **ready to clone** on another mac
 ## Clone
 
 ```bash
-git clone -b governance/copilot-portable <REPO_URL> governance
+git clone -b governance/copilot-portable https://github.com/crozzbite/WorkDesktop.git governance
 cd governance
 ```
+
+> Repo **PRIVATE** — antes: `gh auth login`. Herramientas: [`docs/SETUP-TOOLS.md`](docs/SETUP-TOOLS.md).
 
 Or from an existing clone:
 
@@ -22,6 +24,7 @@ git checkout governance/copilot-portable
 2. Ensure GitHub Copilot is signed in.
 3. Copy `.vscode/settings.json.example` → `.vscode/settings.json` (or merge keys).
 4. Add your company policies under `docs/company/` and link them from `.github/copilot-instructions.md`.
+5. **Tools (Engram, GGA, OpenSpec, etc.):** see [`docs/SETUP-TOOLS.md`](docs/SETUP-TOOLS.md).
 
 ## What this branch contains
 
@@ -49,4 +52,4 @@ git checkout governance/copilot-portable
 
 ## Sync from `master`
 
-When governance evolves on `master`, cherry-pick or merge selective commits into this branch and re-neutralize identity-specific content.
+When governance evolves on `master`, **cherry-pick** selective commits into this branch and re-neutralize identity-specific content. **Never merge** `master` ↔ `governance/copilot-portable`.
