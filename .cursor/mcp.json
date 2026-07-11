@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "angular-cli": {
+      "command": "C:/Users/zzorc/OneDrive/Desktop/WorkDesktop/DnDApp/scripts/angular-mcp.cmd",
+      "args": [],
+      "cwd": "DnDApp/frontend"
+    }
+  }
+}
