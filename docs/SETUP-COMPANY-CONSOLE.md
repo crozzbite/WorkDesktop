@@ -36,7 +36,40 @@ engram setup vscode-copilot
 
 **Reinicia VS Code** después de `engram setup vscode-copilot`.
 
-### Alternativa sin Go (binario)
+### Memorias vacías (máquina nueva — importante)
+
+`engram setup` **solo** registra MCP + instrucciones en VS Code. **No copia** memorias de otra PC.
+
+Las memorias viven **locales** en esta máquina:
+
+```
+%USERPROFILE%\.engram\
+```
+
+En una instalación nueva, esa carpeta **no existe** → Engram empieza **vacío**. Correcto para empezar memorias de empresa desde cero.
+
+**NO hagas esto** (traería tus memorias personales):
+
+- Copiar `%USERPROFILE%\.engram\` desde tu PC personal
+- Copiar `WorkSpace\.engram\` ni ningún `.engram.db`
+- `engram cloud login` con tu cuenta personal
+- Restaurar backup de Engram de otra máquina
+
+**Verificar que está vacío** (después del setup):
+
+```powershell
+engram timeline
+# o en Copilot Chat: pedir mem_context / mem_search — debe devolver vacío o solo sesión nueva
+```
+
+Si por error ya copiaste datos viejos, borra solo la DB local (máquina empresa) y reinicia:
+
+```powershell
+Remove-Item -Recurse -Force "$env:USERPROFILE\.engram" -ErrorAction SilentlyContinue
+engram setup vscode-copilot
+```
+
+Datos empresa quedarán solo en el perfil Windows de **esa** máquina (`%USERPROFILE%\.engram\`).
 
 1. Abre https://github.com/Gentleman-Programming/engram/releases  
 2. Descarga `engram_*_windows_amd64.zip`  
