@@ -41,8 +41,8 @@ git checkout governance/copilot-portable
 ## What this branch does NOT contain
 
 - `.cursor/rules/` (Cursor-only; not used here)
-- Personal programmer profiles
-- Project-specific MCP servers (see `governance-portable/templates/mcp.json.example`)
+- `.cursor/mcp.json` — removed; use `governance-portable/templates/mcp.json.example` per project
+- Personal programmer profiles / `docs/refined-rules/` SkullRender canon — removed from this branch
 
 ## Customize on the other machine
 
