@@ -2,7 +2,8 @@
 
 Enlaces oficiales y comandos para replicar el stack de herramientas que usas aquí, adaptado a **VS Code + Copilot** en la rama `governance/copilot-portable`.
 
-> **Repo privado:** no hace falta hacerlo público; basta `gh auth login` con la cuenta que tiene acceso.
+> **Repo público:** https://github.com/crozzbite/WorkDesktop — clone sin cuenta personal.  
+> **Consola lista para copiar:** [`docs/SETUP-COMPANY-CONSOLE.md`](SETUP-COMPANY-CONSOLE.md)
 
 ---
 
@@ -11,20 +12,19 @@ Enlaces oficiales y comandos para replicar el stack de herramientas que usas aqu
 | Herramienta | Para qué | Instalación |
 |-------------|----------|-------------|
 | **Git** | Clone de rama governance | https://git-scm.com/download/win |
-| **GitHub CLI (`gh`)** | Auth + clone repo privado | https://cli.github.com → `winget install GitHub.cli` |
 | **VS Code** | IDE | https://code.visualstudio.com |
-| **GitHub Copilot** | Agente + instrucciones nativas | Extensión en VS Code Marketplace o plan Copilot activo |
+| **GitHub Copilot** | Agente (cuenta **empresa**) | Plan/licencia corporativa en VS Code |
 
-### Clone de esta rama
+### Clone de esta rama (sin `gh auth`)
 
 ```powershell
-gh auth login
 git clone -b governance/copilot-portable https://github.com/crozzbite/WorkDesktop.git governance
 cd governance
-mkdir .vscode -Force
-copy .vscode\settings.json.example .vscode\settings.json
-code .
+New-Item -ItemType Directory -Force -Path .vscode
+Copy-Item .vscode\settings.json.example .vscode\settings.json
 ```
+
+Ver todos los bloques en [`SETUP-COMPANY-CONSOLE.md`](SETUP-COMPANY-CONSOLE.md).
 
 ---
 
@@ -170,14 +170,13 @@ Guía local (referencia en `master`, no en esta rama): `docs/SETUP-OPENSPEC-Y-CL
 ## 8. Orden sugerido de setup (otra máquina)
 
 ```
-1. gh auth login
-2. git clone -b governance/copilot-portable ...
-3. VS Code + Copilot
-4. .vscode/settings.json
-5. engram install → engram setup vscode-copilot
-6. (opcional) openspec init en el repo governance
-7. (opcional) gga init + gga install por repo de producto
-8. Completar docs/company/*.md
+1. git clone (público, sin cuenta personal)
+2. Abrir carpeta en VS Code + Copilot empresa
+3. .vscode/settings.json
+4. engram install → engram setup vscode-copilot
+5. (opcional) openspec init
+6. (opcional) gga init + gga install
+7. Completar docs/company/*.md
 ```
 
 ---

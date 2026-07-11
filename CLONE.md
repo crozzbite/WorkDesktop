@@ -9,7 +9,8 @@ git clone -b governance/copilot-portable https://github.com/crozzbite/WorkDeskto
 cd governance
 ```
 
-> Repo **PRIVATE** — antes: `gh auth login`. Herramientas: [`docs/SETUP-TOOLS.md`](docs/SETUP-TOOLS.md).
+> Repo **PUBLIC** — clone sin cuenta personal. URL: https://github.com/crozzbite/WorkDesktop  
+> Herramientas: [`docs/SETUP-TOOLS.md`](docs/SETUP-TOOLS.md) · Consola lista: [`docs/SETUP-COMPANY-CONSOLE.md`](docs/SETUP-COMPANY-CONSOLE.md)
 
 Or from an existing clone:
 
