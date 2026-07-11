@@ -1,0 +1,7 @@
+{
+  "chat.useAgentsMdFile": true,
+  "chat.useCustomizationsInParentRepositories": true,
+  "github.copilot.chat.codeGeneration.instructions": [
+    { "file": "./docs/governance/constraints/non-negotiables.md" }
+  ]
+}

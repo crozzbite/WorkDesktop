@@ -1,6 +1,8 @@
 # Governance Portable Pack
 
-Paquete para migrar **gobernanza y estructura agéntica** de SkullRender/Cursor a otra máquina con **GitHub Copilot en VS Code** (sin extensiones extra).
+> **Recomendado:** clona la rama **`governance/copilot-portable`** — ya viene normalizada. Este pack es documentación complementaria.
+
+Paquete para migrar **gobernanza y estructura agéntica** a otra máquina con **GitHub Copilot en VS Code** (sin extensiones extra).
 
 ## Qué incluye este pack
 
@@ -33,11 +35,12 @@ No copies tal cual a la otra máquina:
 
 ## Pasos rápidos en la otra máquina
 
-1. Clonar el repo de gobernanza (WorkDesktop o fork corporativo).
-2. Abrir VS Code con Copilot activo (sin extensiones adicionales).
-3. Pegar el contenido de `PROMPT-COPILOT-SETUP.md` en Copilot Chat (modo Agent).
-4. Adjuntar o referenciar este repo y, si aplica, las políticas de tu empresa.
-5. Dejar que Copilot genere la estructura; revisar y commitear.
+1. `git clone -b governance/copilot-portable <REPO_URL> governance`
+2. Leer `CLONE.md` en la raíz del repo.
+3. Abrir en VS Code con Copilot activo.
+4. Copiar `.vscode/settings.json.example` → `.vscode/settings.json`.
+5. Completar `docs/company/*.md` con políticas de empresa.
+6. *(Opcional)* Usar `PROMPT-COPILOT-SETUP.md` solo si quieres que Copilot refine políticas empresa.
 
 ## Settings recomendados (VS Code)
 

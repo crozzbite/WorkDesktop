@@ -1,6 +1,8 @@
-# Prompt para Copilot (VS Code) — setup de gobernanza agéntica
+# Prompt para Copilot (VS Code) — refinamiento opcional
 
-Copia **todo el bloque entre las líneas `--- INICIO ---` y `--- FIN ---`** y pégalo en **Copilot Chat** (modo Agent) en la otra computadora. Antes de pegar, adjunta o abre el repo clonado de gobernanza.
+> **Nota:** La rama `governance/copilot-portable` ya trae la estructura lista. Usa este prompt **solo** si quieres que Copilot integre políticas de empresa o adapte el stack en la otra máquina.
+
+Copia el bloque entre `--- INICIO ---` y `--- FIN ---` si necesitas asistencia adicional.
 
 ---
 
