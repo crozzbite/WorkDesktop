@@ -54,7 +54,7 @@ Full canon: `docs/governance/refined-rules/09-agent-loops-refined.md`.
 
 Use chat free first; switch to structured delivery when scope is clear.
 
-Invoke structured phases via `.github/prompts/` (e.g. attach `sdd-apply.prompt.md` in Copilot Chat).
+Invoke structured phases via `.github/prompts/` or `.github/skills/` (OpenSpec, strict-tdd, adversarial-review, security-review).
 
 ## Human gates (non-negotiable)
 
@@ -70,3 +70,7 @@ The agent prepares; the human crosses these gates:
 - Security: `docs/company/security-policy.md`
 - Coding standards: `docs/company/coding-standards.md`
 - Compliance: `docs/company/compliance.md`
+
+## Agent skills
+
+VS Code discovers `.github/skills/*/SKILL.md` — see `.github/skills/README.md`.

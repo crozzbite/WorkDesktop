@@ -42,6 +42,16 @@
 
 Copilot file-based rules: `.github/instructions/*.instructions.md`
 
+## Agent skills (VS Code)
+
+| Path | Description |
+|------|-------------|
+| `.github/skills/README.md` | Index |
+| `.github/skills/openspec-*` | OpenSpec workflow (6 skills) |
+| `.github/skills/strict-tdd` | Strict TDD apply micro-loop |
+| `.github/skills/adversarial-review` | Quality gate before archive |
+| `.github/skills/security-review` | OWASP overlay when security triggers |
+
 ---
 
 ## Constraints
