@@ -26,6 +26,8 @@
 | `refined-rules/09-agent-loops-refined.md` | 1.0 | ✓ | Agent loops: TDD, verify, adversarial review |
 | `refined-rules/09-strict-tdd-refined.md` | 1.0 | ✓ | Strict TDD apply protocol |
 | `refined-rules/persona-security-guardian.md` | 1.0 | ✓ | Security Guardian persona |
+| `refined-rules/10-enterprise-agent-ruleset.md` | 1.2 | ✓ | Enterprise Agent Ruleset (portable): confidentiality, context, RACI ownership, scope, evidence + master priority |
+| `glossary.md` | 1.0 | ✓ | Acronym/term glossary with DO/DON'T examples; lookup source for RULE_001 |
 
 ---
 

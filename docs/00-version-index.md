@@ -15,20 +15,17 @@
 
 ## Refined rules (architecture, process, constraints)
 
+> **MIGRATED (2026-07-15):** `docs/refined-rules/` was **removed** in commit `f6ba229`
+> ("remove SkullRender leaks" — fork-audit cleanup). Live canon is
+> **`docs/governance/refined-rules/`** and its index `docs/governance/00-version-index.md`.
+> SkullRender-specific files (pillars matrix, programmer profile, persona Cerbero, CI/CD standard)
+> have no neutral equivalent — recover from git history if needed.
+
 | File | Version | Current | Description |
 |------|---------|---------|-------------|
-| `docs/refined-rules/00-identity-refined.md`  | 1.0 | ✓ | Identity, Global Ban List, Output Sanitation |
-| `docs/refined-rules/01-10-pillars-matrix.md` | 1.0 | ✓ | Matrix Rule × Pillar × Priority |
-| `docs/refined-rules/hierarchy.md`            | 1.0 | ✓ | Explicit precedence when rules conflict |
-| `docs/refined-rules/02-patterns-refined.md`  | 1.0 | ✓ | Architectural patterns + when to use each |
-| `docs/refined-rules/05-cognitive-refined.md` | 1.0 | ✓ | Cognitive layer + LangSmith observability |
-| `docs/refined-rules/07-security-refined.md`  | 1.0 | ✓ | Security + context matrix (Web/API/LLM/Agentic) |
-| `docs/refined-rules/08-workflow-refined.md`  | 1.2 | ✓ | Workflow phases + SDLC alignment + STOPs (+ Strict TDD ref, JD gate Rule 09) |
-| `docs/refined-rules/09-agent-loops-refined.md` | 1.1 | ✓ | Agent loops: JD triggers, persistence, human-in-the-loop |
-| `docs/refined-rules/09-strict-tdd-refined.md` | 1.0 | ✓ | Strict TDD apply protocol: Safety net → Understand → RED → GREEN → Triangulate → Refactor |
-| `docs/refined-rules/programmer-profile-zzorc.md` | 1.0 | ✓ | Perfil de personalidad de zzorc (pacto samurai-espada, FODA, Ley del Entierro, comportamientos activos) |
-| `docs/refined-rules/persona-cerbero.md` | 1.1 | ✓ | Persona Cerbero (+ JD overlay Rule 09; JD general = Gentleman) |
-| `docs/refined-rules/skullrender-cicd-standard.md` | 1.0 | ✓ | CI/CD standard: CI → GHCR → AKS OIDC; vars/secrets/local.env; reference DnDApp |
+| `docs/refined-rules/*` (all rows previously here) | — | removed | See `docs/governance/refined-rules/` + git history (`f6ba229^`) |
+| `docs/governance/refined-rules/10-enterprise-agent-ruleset.md` | 1.2 | ✓ | Enterprise Agent Ruleset (portable): 8 adopted rules (RACI ownership) + master priority |
+| `docs/governance/glossary.md` | 1.0 | ✓ | Acronym/term glossary with DO/DON'T examples; lookup source for RULE_001 |
 
 ---
 
@@ -39,7 +36,7 @@
 | `docs/code-rules/00-index.md`   | 1.0 | ✓ | Code rules index and versioning |
 | `docs/code-rules/typescript.md` | 1.0 | ✓ | TypeScript: DO / NEVER + snippets |
 | `docs/code-rules/python.md`     | 1.0 | ✓ | Python: DO / NEVER + snippets |
-| `docs/code-rules/angular.md`    | 1.0 | ✓ | Angular 19+: DO / NEVER + snippets |
+| `docs/code-rules/angular.md`    | 1.1 | ✓ | Angular 19+: DO / NEVER + snippets; `inject()` not constructor DI |
 | `docs/code-rules/fastapi.md`    | 1.0 | ✓ | FastAPI: DO / NEVER + snippets |
 | `docs/code-rules/tailwind.md`   | 1.0 | ✓ | Tailwind (SkullRender): DO / NEVER + snippets |
 
