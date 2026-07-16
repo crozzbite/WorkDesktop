@@ -1,0 +1,41 @@
+# === SkullRender — Governance Root Repo ===
+# This root repo tracks ONLY governance/canon (docs, rules, persona, AGENTS).
+# Each project below is its OWN independent git repo and is NOT tracked here.
+
+# --- Independent project repos (do not track) ---
+/DnDApp/
+/Phylactery-Bridge/
+/gentle-ai/
+/SkullRender/
+/SkullRender-Agents/
+/skullrender-mcp-skills/
+/teacher-daniela/
+/phylactery/
+/AgenteCrozz/
+/solid-scrivener/
+
+# --- Dependencies / build / caches ---
+node_modules/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+dist/
+build/
+*.log
+
+# --- OS / editor noise ---
+Thumbs.db
+.DS_Store
+*.swp
+
+# --- AI tool caches ---
+.aider*
+.aider.tags.cache.v4/
+
+# --- Secrets (never commit) ---
+.env
+*.env
+.env.*
+!*.env.example
