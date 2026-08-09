@@ -51,6 +51,14 @@ git checkout governance/copilot-portable
 3. Optional: add `.github/skills/` for reusable workflows.
 4. Optional: configure MCP when tools are defined.
 
+## Related: office topology accelerator (Cursor)
+
+For **pack-free office manifests** (Facade / PMO / stage offices) as an IaC-style formula, see the separate repo:
+
+- https://github.com/crozzbite/office-accelerator
+
+This governance branch remains the Copilot/rules canon. The accelerator can emit optional neutral Cursor rules (`enable_rules: true|false`) or leave room for BYO rules.
+
 ## Sync from `master`
 
 When governance evolves on `master`, **cherry-pick** selective commits into this branch and re-neutralize identity-specific content. **Never merge** `master` ↔ `governance/copilot-portable`.

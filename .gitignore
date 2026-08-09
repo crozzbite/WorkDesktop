@@ -2,13 +2,14 @@
 # This root repo tracks ONLY governance/canon (docs, rules, persona, AGENTS).
 # Each project below is its OWN independent git repo and is NOT tracked here.
 
-# --- Independent project repos (do not track) ---
+# Independent project repos (do not track)
 /DnDApp/
 /Phylactery-Bridge/
 /gentle-ai/
 /SkullRender/
 /SkullRender-Agents/
 /skullrender-mcp-skills/
+/office-accelerator/
 /teacher-daniela/
 /phylactery/
 /AgenteCrozz/

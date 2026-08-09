@@ -32,6 +32,7 @@ No copies tal cual a la otra máquina:
 
 1. **WorkDesktop** (este repo) — canon de gobernanza en `docs/` + este pack en `governance-portable/`
 2. **WorkSpace** (opcional) — skills y workflows en `.agents/`; filtrar solo los genéricos (OpenSpec, TDD, seguridad OWASP, etc.)
+3. **[office-accelerator](https://github.com/crozzbite/office-accelerator)** (opcional, Cursor) — fórmula IaC-like de offices pack-free + reglas neutras opcionales (`enable_rules`)
 
 ## Pasos rápidos en la otra máquina
 
