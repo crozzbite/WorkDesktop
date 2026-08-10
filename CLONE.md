@@ -84,6 +84,11 @@ Use repo skills/prompts: `adversarial-review`, `security-review`, plus the clien
 2. Update stack in `.github/copilot-instructions.md` if needed.
 3. Optional: Engram / Azure MCP / OpenSpec — see SETUP-TOOLS.
 
-## Sync from `master`
+## Related: Scope B offices (neutral)
 
-Cherry-pick selective commits; re-neutralize identity-specific content. **Never merge** `master` ↔ portable/ready branches.
+Pack-free `Office*` MCP product (sibling repos — not merged into this branch):
+
+- https://github.com/crozzbite/office-accelerator (`dist/legion-neutral`)
+- https://github.com/crozzbite/SkullRender-Agents (runtime; `inject_pack: false`)
+
+After clone, paste the **SETUP PROMPT** from each README into Copilot Chat.
