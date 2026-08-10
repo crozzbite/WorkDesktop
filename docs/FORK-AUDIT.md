@@ -1,5 +1,8 @@
 # Fork audit — v-jonathanz/WorkDesktop vs crozzbite/WorkDesktop
 
+> **Status:** HISTORICAL / AUDIT ONLY — not active SoT for `governance/vscode-copilot-ready`.  
+> Describes past fork hygiene; do not treat as live setup instructions.
+
 **Fork:** https://github.com/v-jonathanz/WorkDesktop (`governance/copilot-portable` @ `5dbc114`)  
 **Upstream:** https://github.com/crozzbite/WorkDesktop (`governance/copilot-portable` @ `9c7d687`)  
 **Date:** 2026-07-11

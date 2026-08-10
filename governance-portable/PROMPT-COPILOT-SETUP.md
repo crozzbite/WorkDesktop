@@ -1,6 +1,7 @@
 # Prompt para Copilot (VS Code) — refinamiento opcional
 
-> **Nota:** La rama `governance/copilot-portable` ya trae la estructura lista. Usa este prompt **solo** si quieres que Copilot integre políticas de empresa o adapte el stack en la otra máquina.
+> **Nota:** Preferir rama `governance/vscode-copilot-ready` (o `governance/copilot-portable`). La estructura ya viene lista. Usa este prompt **solo** si quieres que Copilot integre políticas de empresa.  
+> Las menciones a SkullRender / Lich / Gentleman / Cerbero abajo son **nombres a evitar** (neutralizar), no identidad a restaurar.
 
 Copia el bloque entre `--- INICIO ---` y `--- FIN ---` si necesitas asistencia adicional.
 

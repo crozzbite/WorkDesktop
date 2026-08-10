@@ -1,5 +1,7 @@
 # SkullRender-Agents — remote hygiene (apply locally)
 
+> **LOCAL / NON-PORTABLE** — authoring-machine handoff with absolute paths. Not part of Copilot portable SoT. See [`README.md`](README.md).
+
 Cloud agent **cannot push** to `crozzbite/SkullRender-Agents` (token is `cursor[bot]`, no write on that repo). Hygiene commit is prepared; apply + push from your PC.
 
 ## Already clean on GitHub

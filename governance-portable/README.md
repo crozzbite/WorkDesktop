@@ -1,6 +1,6 @@
 # Governance Portable Pack
 
-> **Recomendado:** clona la rama **`governance/copilot-portable`** — ya viene normalizada. Este pack es documentación complementaria.
+> **Recomendado:** clona **`governance/vscode-copilot-ready`** (fallback: `governance/copilot-portable`). Este pack es documentación complementaria — la SoT viva está en la raíz del repo (`CLONE.md`, `AGENTS.md`, `.github/`, `docs/governance/`).
 
 Paquete para migrar **gobernanza y estructura agéntica** a otra máquina con **GitHub Copilot en VS Code** (sin extensiones extra).
 
@@ -34,7 +34,7 @@ No copies tal cual a la otra máquina:
 
 ## Pasos rápidos en la otra máquina
 
-1. `git clone -b governance/copilot-portable <REPO_URL> governance`
+1. `git clone -b governance/vscode-copilot-ready <REPO_URL> governance`
 2. Leer `CLONE.md` en la raíz del repo.
 3. Abrir en VS Code con Copilot activo.
 4. Copiar `.vscode/settings.json.example` → `.vscode/settings.json`.

@@ -1,0 +1,54 @@
+# [HISTORICAL / NON-PORTABLE] Prompt Engineering Notes
+
+> **Status:** Archived. Not active SoT for `governance/vscode-copilot-ready`.  
+> Useful as general promptcraft reference; ignore branded “SkullRender stack” lines.  
+> **Live code rules:** `docs/governance/code-rules/` + `.github/instructions/`.
+
+**Original date:** 2025-03-15
+
+---
+
+# Prompt Engineering Notes (archived)
+
+> Reference only. No version field.  
+> **Updated:** 2025-03-15.
+
+---
+
+## 1. Constraint Engineering (Prompt Sigma)
+
+- **Negative constraints** (what NOT to do) often work better than only positive ones: they prune the model’s output space.
+- **Three-phase structure:**
+  1. **Global Ban List** (start of prompt): non-negotiable NEVER/FORBIDDEN.
+  2. **Local Rule Set**: what TO do (tasks, patterns).
+  3. **Output Sanitation** (before execution): final constraints on format and safety.
+- Use **NEVER**, **DO NOT**, **FORBIDDEN** as clear “kill switches” for bad behavior.
+
+**Source:** https://promptsigma.com/constraint-engineering-negative-constraints-power.html
+
+---
+
+## 2. Cursor / Agent Rules (official)
+
+- Rules in `.cursor/rules` as markdown; `.mdc` with frontmatter for `alwaysApply`, `globs`, `description`.
+- **Priority:** Team > Project > User > Legacy.
+- **Best practices:** Reference files instead of copying; keep under ~500 lines; be concrete; include examples; avoid vague or rare edge-case guidance.
+
+**Source:** https://cursor.com/docs/rules
+
+> Portable VS Code path uses `.github/copilot-instructions.md` + `.github/instructions/` instead of `.cursor/rules`.
+
+---
+
+## 3. Length and position
+
+- Very long constraint blocks can degrade performance (“lost in the middle”).
+- **Critical constraints:** place at **beginning** and **end** of context; avoid burying in the middle.
+- Short, dense constraint lists (~150–300 words) often work better than long prose.
+
+---
+
+## 4. Examples (historical)
+
+- **cursorrules-collection:** security.mdc, clean-code.mdc (concrete DO/NEVER, bullets, no fluff).
+- Historical stack notes (Angular / FastAPI / Tailwind / bun) lived under branded docs; current stack lives in `docs/company/coding-standards.md` + `docs/governance/code-rules/`.

@@ -1,5 +1,7 @@
 # Super-prompts — redirected (portable)
 
+> **Not active SoT.** Branded kit is historical only.
+
 The branded SuperPrompts kit (Lich / Gentleman / SkullRender MCP) was archived:
 
 → [`docs/archive/SR-SuperPrompts.md`](docs/archive/SR-SuperPrompts.md)

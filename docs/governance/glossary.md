@@ -163,8 +163,8 @@ Selected terms include **DO / DON'T** usage examples (same style as `code-rules/
 | SDD | Spec-Driven Development | Desarrollo Guiado por Especificación | Workflow: proposal → spec → design → tasks → apply → verify → archive |
 | TDD | Test-Driven Development | Desarrollo Guiado por Pruebas | RED (failing test) → GREEN (minimum code) → Refactor |
 | OpenSpec | — | — | Tooling/convention implementing SDD: `openspec/specs/` + `openspec/changes/` |
-| GGA | Gentleman Guardian Angel | — | Local pre-commit AI review tool; rules in `AGENTS.md`, config in `.gga` |
-| JD | Judgment Day | Día del Juicio | Adversarial dual-review protocol: two blind reviewers + synthesis + fix + re-judge |
+| GGA | Gentleman Guardian Angel | — | **Personal/local only** — optional pre-commit review on an authoring PC; **not** a portable/enterprise requirement. Portable substitute: `adversarial-review` + `security-review` skills |
+| JD | Judgment Day | Día del Juicio | Historical name for adversarial dual-review; portable name: **Adversarial Review** (`.github/prompts/adversarial-review.prompt.md`) |
 | DDD | Domain-Driven Design | Diseño Guiado por el Dominio | Modeling software around the business domain; domain layer free of framework imports |
 | OWASP | Open Worldwide Application Security Project | — | Foundation publishing the Top 10 security risk lists (Web, API, LLM) |
 | STRIDE | Spoofing, Tampering, Repudiation, Information disclosure, Denial of service, Elevation of privilege | — | Threat-modeling checklist |
