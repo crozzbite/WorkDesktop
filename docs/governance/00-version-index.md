@@ -1,7 +1,10 @@
 # Governance Rules — Version Index
 
 > **Purpose:** Track which rule sets are current (✓) for portable / Copilot VS Code usage.
-> **Updated:** 2026-07-10 (ISO 8601).
+> **Updated:** 2026-08-10 (ISO 8601).
+
+**Active SoT (with this index):** `AGENTS.md` · `.github/` · `docs/governance/` · `docs/company/`.  
+**Not SoT:** `docs/archive/`, local handoffs, product folders, Cursor-only rules, GGA as a hard dependency.
 
 ---
 
@@ -9,7 +12,7 @@
 
 - **version:** Semantic (e.g. `1.0`). Bump when meaning or scope changes.
 - **✓ (current):** Active for new work on this branch.
-- **Location:** `docs/governance/` on branch `governance/copilot-portable`.
+- **Location:** `docs/governance/` on `governance/vscode-copilot-ready` / `governance/copilot-portable`.
 
 ---
 

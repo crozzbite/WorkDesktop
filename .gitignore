@@ -1,8 +1,7 @@
-# === SkullRender — Governance Root Repo ===
-# This root repo tracks ONLY governance/canon (docs, rules, persona, AGENTS).
-# Each project below is its OWN independent git repo and is NOT tracked here.
+# === Governance root ===
+# Tracks portable canon (docs, AGENTS, .github). Nested project repos stay untracked.
 
-# Independent project repos (do not track)
+# Independent project repos / local product (do not track)
 /DnDApp/
 /Phylactery-Bridge/
 /gentle-ai/
@@ -14,6 +13,10 @@
 /phylactery/
 /AgenteCrozz/
 /solid-scrivener/
+/Check-U/
+
+# Local MCP smoke (may differ per machine). Ship: governance-portable/templates/mcp.json.example
+.vscode/mcp.json
 
 # --- Dependencies / build / caches ---
 node_modules/

@@ -4,25 +4,34 @@ Copia y pega **bloque por bloque** en la terminal integrada de VS Code (PowerShe
 No requiere cuenta GitHub personal — el repo es **público**.
 
 Repo: https://github.com/crozzbite/WorkDesktop  
-Rama: `governance/copilot-portable`
+Rama recomendada: `governance/vscode-copilot-ready` (fallback: `governance/copilot-portable`)
+
+**Fuera del setup empresa:** GGA (Gentleman Guardian Angel), Gentle AI como orquestador, packs de personalidad, Cursor-only, handoffs con paths de otra máquina. En esta PC el review portable es `adversarial-review` + `security-review` (+ la herramienta nativa que ya tenga la empresa).
 
 ---
 
-## Bloque 1 — Clonar y abrir
+## Bloque 1 — Clonar y abrir (obligatorio)
 
 ```powershell
 cd $env:USERPROFILE\Documents
-git clone -b governance/copilot-portable https://github.com/crozzbite/WorkDesktop.git governance
+git clone -b governance/vscode-copilot-ready https://github.com/crozzbite/WorkDesktop.git governance
 cd governance
 New-Item -ItemType Directory -Force -Path .vscode
 Copy-Item .vscode\settings.json.example .vscode\settings.json
+Copy-Item governance-portable\templates\mcp.json.example .vscode\mcp.json
 ```
 
 Luego en VS Code: **File → Open Folder** → selecciona la carpeta `governance`.
 
+Si `governance/vscode-copilot-ready` aún no existe en remoto, usa:
+
+```powershell
+git clone -b governance/copilot-portable https://github.com/crozzbite/WorkDesktop.git governance
+```
+
 ---
 
-## Bloque 2 — Engram (memoria persistente)
+## Bloque 2 — Engram (memoria persistente) — opcional
 
 Requiere **Go** instalado: https://go.dev/dl/
 
@@ -48,11 +57,11 @@ Las memorias viven **locales** en esta máquina:
 
 En una instalación nueva, esa carpeta **no existe** → Engram empieza **vacío**. Correcto para empezar memorias de empresa desde cero.
 
-**NO hagas esto** (traería tus memorias personales):
+**NO hagas esto** (traería memorias personales):
 
-- Copiar `%USERPROFILE%\.engram\` desde tu PC personal
-- Copiar `WorkSpace\.engram\` ni ningún `.engram.db`
-- `engram cloud login` con tu cuenta personal
+- Copiar `%USERPROFILE%\.engram\` desde otra PC
+- Copiar cualquier `.engram.db`
+- `engram cloud login` con cuenta personal
 - Restaurar backup de Engram de otra máquina
 
 **Verificar que está vacío** (después del setup):
@@ -69,50 +78,16 @@ Remove-Item -Recurse -Force "$env:USERPROFILE\.engram" -ErrorAction SilentlyCont
 engram setup vscode-copilot
 ```
 
-Datos empresa quedarán solo en el perfil Windows de **esa** máquina (`%USERPROFILE%\.engram\`).
+### Alternativa sin Go (binario)
 
 1. Abre https://github.com/Gentleman-Programming/engram/releases  
 2. Descarga `engram_*_windows_amd64.zip`  
 3. Extrae `engram.exe` a `%USERPROFILE%\bin` y agrégalo al PATH  
-4. Luego:
-
-```powershell
-engram setup vscode-copilot
-```
+4. Luego: `engram setup vscode-copilot`
 
 ---
 
-## Bloque 3 — GGA (review pre-commit, opcional)
-
-Requiere **Git Bash** o WSL en la máquina empresa:
-
-```bash
-git clone https://github.com/Gentleman-Programming/gentleman-guardian-angel.git
-cd gentleman-guardian-angel
-bash install.sh
-```
-
-Vuelve a PowerShell en la carpeta `governance`:
-
-```powershell
-cd $env:USERPROFILE\Documents\governance
-gga init
-gga install
-```
-
-### Alternativa vía gentle-ai (PowerShell)
-
-```powershell
-irm https://raw.githubusercontent.com/Gentleman-Programming/gentle-ai/main/scripts/install.ps1 | iex
-gentle-ai install --component gga
-cd $env:USERPROFILE\Documents\governance
-gga init
-gga install
-```
-
----
-
-## Bloque 4 — OpenSpec (opcional)
+## Bloque 3 — OpenSpec (opcional)
 
 Requiere **Node.js 20.19+**: https://nodejs.org
 
@@ -123,26 +98,29 @@ openspec init
 openspec update
 ```
 
+Sin OpenSpec, usa prompts `sdd-*` y skills `strict-tdd` / `adversarial-review` / `security-review`.
+
 ---
 
-## Bloque 5 — Verificar Copilot
+## Bloque 4 — Verificar Copilot
 
 Con la carpeta `governance` abierta en VS Code y **Copilot de la empresa** activo, pega esto en **Copilot Chat**:
 
 ```
-Repo clonado: governance/copilot-portable (rama independiente de master — NUNCA mergear).
+Repo clonado: governance/vscode-copilot-ready (o copilot-portable). Rama independiente de master — NUNCA mergear.
 
 Herramientas en esta máquina:
 - VS Code + GitHub Copilot (cuenta empresa)
-- Engram (engram setup vscode-copilot)
+- MCP opcional: engram, context7, azure (desde .vscode/mcp.json o plantilla)
 
-Lee CLONE.md y docs/SETUP-TOOLS.md.
+Lee CLONE.md.
 
 Ayúdame a:
-1. Verificar que Copilot carga copilot-instructions.md y AGENTS.md (muestra References).
-2. Completar docs/company/ con políticas empresa que te pegaré después.
-3. Confirmar que Engram MCP responde.
-4. Una fase a la vez; sin código de producto.
+1. Verificar que Copilot carga AGENTS.md y .github/copilot-instructions.md (muestra References).
+2. Confirmar settings: chat.useAgentsMdFile y chat.useCustomizationsInParentRepositories.
+3. Confirmar que GGA NO es requisito de esta base.
+4. Completar docs/company/ con políticas que te pegaré después.
+5. Una fase a la vez; sin código de producto.
 ```
 
 ---
@@ -153,5 +131,7 @@ Ayúdame a:
 |------|---------|
 | Cuenta GitHub | **No necesaria** para clonar (repo público) |
 | Copilot | Usa la **cuenta/licencia de tu empresa** en VS Code |
-| Datos Engram | Quedan en `%USERPROFILE%\.engram\` (local, máquina empresa) |
-| Repo master | No clonar/usar `master` en empresa — solo rama `governance/copilot-portable` |
+| Datos Engram | Quedan en `%USERPROFILE%\.engram\` (local) si lo instalas |
+| GGA | **No** forma parte del setup empresa |
+| Repo master | No clonar/usar `master` — solo rama portable / ready |
+| SoT activa | `AGENTS.md` + `.github/` + `docs/governance/` (no archive, no handoffs) |

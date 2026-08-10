@@ -1,8 +1,20 @@
 # Agent Skills (VS Code Copilot)
 
-Neutral skills for structured delivery on branch `governance/copilot-portable`.
+Neutral skills for structured delivery (`governance/vscode-copilot-ready` / `governance/copilot-portable`).
 
-## OpenSpec workflow
+## Core (portable — no extra CLI)
+
+| Skill | Trigger |
+|-------|---------|
+| `strict-tdd` | Behavior-first micro-loop during apply |
+| `adversarial-review` | Quality gate before archive (portable substitute for local-only review tools such as GGA) |
+| `security-review` | OWASP-focused review when security is in scope |
+
+Canon: `docs/governance/refined-rules/09-agent-loops-refined.md`, `09-strict-tdd-refined.md`, `07-security-refined.md`.
+
+Pair with prompts: `.github/prompts/sdd-*.prompt.md`, `adversarial-review.prompt.md`.
+
+## Optional (requires OpenSpec CLI)
 
 | Skill | Trigger |
 |-------|---------|
@@ -13,18 +25,14 @@ Neutral skills for structured delivery on branch `governance/copilot-portable`.
 | `openspec-archive-change` | Archive completed change |
 | `openspec-sync-specs` | Sync spec artifacts |
 
-Requires: `openspec` CLI (`npm install -g @fission-ai/openspec`).
+Requires: `openspec` CLI (`npm install -g @fission-ai/openspec`). Without it, use **core** skills + `sdd-*` prompts only.
 
-## Governance loops
+## Out of scope
 
-| Skill | Trigger |
-|-------|---------|
-| `strict-tdd` | Behavior-first micro-loop during apply |
-| `adversarial-review` | Quality gate before archive (ex Judgment Day) |
-| `security-review` | OWASP-focused review when security is in scope |
-
-Canon references: `docs/governance/refined-rules/09-agent-loops-refined.md`, `09-strict-tdd-refined.md`, `07-security-refined.md`.
+- Personality packs / branded experts
+- GGA as a skill dependency
+- Cursor-only workflows
 
 ## Fork note
 
-Company fork `v-jonathanz/WorkDesktop` may have an earlier subset (5 OpenSpec skills). Upstream adds `openspec-verify-change`, `strict-tdd`, `adversarial-review`, and `security-review`. Cherry-pick from `crozzbite/WorkDesktop` when syncing — never merge branches.
+Company fork `v-jonathanz/WorkDesktop` may have an earlier subset. Sync from `crozzbite/WorkDesktop` via cherry-pick — never merge portable ↔ master.

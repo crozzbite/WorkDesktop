@@ -1,64 +1,89 @@
-# Governance repo — Copilot / VS Code branch
+# Governance repo — Copilot / VS Code (portable)
 
-This branch (`governance/copilot-portable`) is **ready to clone** on another machine. No SkullRender branding, no personal profiles, no Cursor-specific rules.
+Ramas: `governance/vscode-copilot-ready` (preferida) · `governance/copilot-portable` (base).
+
+Cursor = autoría / limpieza. VS Code + GitHub Copilot = consumo portable.
+
+## Active source of truth (SoT)
+
+**Operativo (viaja con el clone):**
+
+1. `AGENTS.md` — tri-rol (Architect / Implementer / Security Guardian)
+2. `.github/copilot-instructions.md` + `.github/instructions/` + `.github/prompts/` + `.github/skills/`
+3. `docs/governance/` — canon (`00-version-index.md`, refined-rules, constraints, code-rules)
+4. `docs/company/` — políticas empresa (placeholders hasta P1)
+5. `.vscode/settings.json.example` + `governance-portable/templates/mcp.json.example`
+
+**No operativo / no ship path:**
+
+- `docs/archive/`, handoffs con paths locales, notes de OneDrive / `C:\Users\…`
+- Product folders (`Check-U/`, etc.)
+- SkullRender-Agents, office-accelerator, packs de personalidad (Lich / Gentleman / Cerbero)
+- GGA como requisito
+- `.cursor/rules/` (Cursor-only)
+- `.vscode/mcp.json` personalizado con rutas absolutas (usa la plantilla)
 
 ## Clone
 
 ```bash
-git clone -b governance/copilot-portable https://github.com/crozzbite/WorkDesktop.git governance
+git clone -b governance/vscode-copilot-ready https://github.com/crozzbite/WorkDesktop.git governance
 cd governance
 ```
 
-> Repo **PUBLIC** — clone sin cuenta personal. URL: https://github.com/crozzbite/WorkDesktop  
-> Herramientas: [`docs/SETUP-TOOLS.md`](docs/SETUP-TOOLS.md) · Consola lista: [`docs/SETUP-COMPANY-CONSOLE.md`](docs/SETUP-COMPANY-CONSOLE.md)
+> Repo **PUBLIC** — https://github.com/crozzbite/WorkDesktop  
+> Consola: [`docs/SETUP-COMPANY-CONSOLE.md`](docs/SETUP-COMPANY-CONSOLE.md) · Tools: [`docs/SETUP-TOOLS.md`](docs/SETUP-TOOLS.md)
 
-Or from an existing clone:
+Fallback:
 
 ```bash
-git fetch origin
-git checkout governance/copilot-portable
+git clone -b governance/copilot-portable https://github.com/crozzbite/WorkDesktop.git governance
 ```
 
-## VS Code setup (native Copilot, no extra extensions)
+## VS Code setup (native Copilot)
 
 1. Open the folder in VS Code.
-2. Ensure GitHub Copilot is signed in.
-3. Copy `.vscode/settings.json.example` → `.vscode/settings.json` (or merge keys).
-4. Add your company policies under `docs/company/` and link them from `.github/copilot-instructions.md`.
-5. **Tools (Engram, GGA, OpenSpec, etc.):** see [`docs/SETUP-TOOLS.md`](docs/SETUP-TOOLS.md).
+2. Sign in with **company** GitHub Copilot.
+3. Copy `.vscode/settings.json.example` → `.vscode/settings.json`.
+4. Optional MCP: copy `governance-portable/templates/mcp.json.example` → `.vscode/mcp.json` (no absolute user paths).
+5. Confirm settings:
+   - `chat.useAgentsMdFile`: true
+   - `chat.useCustomizationsInParentRepositories`: true
+   - `github.copilot.chat.codeGeneration.instructions` → `docs/governance/constraints/non-negotiables.md`
+6. Fill `docs/company/` when real policies exist (P1).
+
+### References gate (smoke)
+
+In Copilot Chat, References should include at least:
+
+- `AGENTS.md`
+- `.github/copilot-instructions.md`
+- preferably `docs/governance/00-version-index.md` and/or `non-negotiables.md`
+
+If that fails, fix settings/scope before skills or MCP.
 
 ## What this branch contains
 
 | Path | Purpose |
 |------|---------|
-| `AGENTS.md` | Tri-role protocol (Architect / Implementer / Security Guardian) |
+| `AGENTS.md` | Tri-role protocol |
 | `.github/copilot-instructions.md` | Global Copilot instructions |
-| `.github/instructions/` | Stack-specific rules (`applyTo` frontmatter), incl. `azure.instructions.md` |
-| `.github/prompts/` | Structured delivery flows (explore, apply, verify, adversarial review) |
-| `docs/governance/` | Canon rules, constraints, version index |
-| `docs/company/` | Placeholders for your enterprise policies |
+| `.github/instructions/` | Stack rules (`applyTo`), incl. Azure |
+| `.github/prompts/` | SDD + adversarial review (`opsx-*` optional / OpenSpec) |
+| `.github/skills/` | Core: strict-tdd, adversarial-review, security-review; OpenSpec optional |
+| `docs/governance/` | Canon |
+| `docs/company/` | Enterprise policy placeholders |
+| `governance-portable/templates/mcp.json.example` | Portable MCP (engram, context7, azure) |
 
-## What this branch does NOT contain
+## Review substitute (no GGA in portable path)
 
-- `.cursor/rules/` (Cursor-only; not used here)
-- `.cursor/mcp.json` — removed; use `governance-portable/templates/mcp.json.example` per project
-- Personal programmer profiles / `docs/refined-rules/` SkullRender canon — removed from this branch
+Use repo skills/prompts: `adversarial-review`, `security-review`, plus the client machine’s native review tool. GGA may remain installed on an authoring PC; it is **not** part of company setup.
 
 ## Customize on the other machine
 
-1. Edit `docs/company/*.md` with real policies.
-2. Update stack section in `.github/copilot-instructions.md` (package manager, frameworks).
-3. Optional: add `.github/skills/` for reusable workflows.
-4. Optional: configure MCP when tools are defined.
-
-## Related: office topology accelerator (Cursor)
-
-For **pack-free office manifests** (Facade / PMO / stage offices) as an IaC-style formula, see the separate repo:
-
-- https://github.com/crozzbite/office-accelerator
-
-This governance branch remains the Copilot/rules canon. The accelerator can emit optional neutral Cursor rules (`enable_rules: true|false`) or leave room for BYO rules.
+1. Edit `docs/company/*.md`.
+2. Update stack in `.github/copilot-instructions.md` if needed.
+3. Optional: Engram / Azure MCP / OpenSpec — see SETUP-TOOLS.
 
 ## Sync from `master`
 
-When governance evolves on `master`, **cherry-pick** selective commits into this branch and re-neutralize identity-specific content. **Never merge** `master` ↔ `governance/copilot-portable`.
+Cherry-pick selective commits; re-neutralize identity-specific content. **Never merge** `master` ↔ portable/ready branches.
