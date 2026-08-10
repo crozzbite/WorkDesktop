@@ -42,7 +42,7 @@
 | `code-rules/fastapi.md` | 1.0 | ✓ | FastAPI DO / NEVER |
 | `code-rules/tailwind.md` | 1.0 | ✓ | Tailwind DO / NEVER |
 
-Copilot file-based rules: `.github/instructions/*.instructions.md`
+Copilot file-based rules: `.github/instructions/*.instructions.md` (includes `azure.instructions.md` for IaC)
 
 ## Agent skills (VS Code)
 
@@ -85,3 +85,12 @@ This branch is derived from `master` governance canon. When updating:
 1. Cherry-pick or merge doc changes from `master`.
 2. Re-neutralize identity-specific content (no brand personas, no personal profiles).
 3. Bump versions in this index when meaning changes.
+
+## Deprecated paths (do not use as SoT)
+
+| Path | Status |
+|------|--------|
+| `docs/code-rules/*` (except README stub) | Removed 2026-08-09 — use `docs/governance/code-rules/` |
+| `docs/constraints/*` (except README stub) | Removed 2026-08-09 — use `docs/governance/constraints/` |
+| `docs/00-version-index.md` | Stub redirect → this file |
+| `docs/archive/` | Historical only (e.g. branded SuperPrompts) |

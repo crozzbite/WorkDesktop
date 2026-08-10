@@ -20,7 +20,7 @@ description: Architectural patterns + when to use each. Refined Rule 02.
 
 ## Pattern summary & when to use
 
-| Pattern | When it’s convenient | When to avoid | SkullRender default |
+| Pattern | When it’s convenient | When to avoid | Default here |
 |--------|----------------------|---------------|----------------------|
 | **Modular Monolith** | MVP, small team (<5), simple domain, need low latency and simple deploy | When you need independent scaling of components or polyglot teams | ✓ Default. Domains in `modules/`, in-memory calls, strict boundaries. |
 | **Microservices** | Multiple teams (>~20), independent scaling per component, polyglot (e.g. Python + Rust) | Early stage, single team, no clear bounded contexts | Only when a module is choking the whole or teams collide. |

@@ -16,7 +16,7 @@ description: Constraints by domain (front, back, API, DB, testing, etc.).
 - State: Signals (and SignalStore where needed); avoid manual RxJS subscriptions for new code.
 - Change detection: OnPush.
 - NEVER `any`; NEVER `!important` to fix specificity.
-- Use Tailwind for styling; follow SkullRender aesthetic (see code-rules/tailwind.md).
+- Use Tailwind for styling; follow `docs/governance/code-rules/tailwind.md`.
 - Security: sanitize user input (e.g. DOMPurify); secure storage for tokens (e.g. httpOnly cookies preferred).
 
 ---

@@ -15,7 +15,7 @@ Code-level rules: **what to do** and **what never to do** with languages and too
 | `python.md` | 1.0 | ✓ | Python (uv, mypy, ruff, no Pokemon) |
 | `angular.md` | 1.0 | ✓ | Angular 19+ (Standalone, Signals, OnPush) |
 | `fastapi.md` | 1.0 | ✓ | FastAPI (Pydantic, OpenAPI first) |
-| `tailwind.md` | 1.0 | ✓ | Tailwind (SkullRender aesthetic) |
+| `tailwind.md` | 1.0 | ✓ | Tailwind: DO / NEVER + snippets |
 | `nexus-angular.md` | 1.0 | ✓ | Nexus Architecture + Clean/DDD en Angular (path aliases, tokens, use cases, conectores) |
 
 ---
@@ -25,7 +25,7 @@ Code-level rules: **what to do** and **what never to do** with languages and too
 - **When writing TS:** Apply `typescript.md` + `angular.md` (if Angular). If the project follows **Nexus Architecture**, also apply `nexus-angular.md`.
 - **When writing Python:** Apply `python.md` + `fastapi.md` (if API).
 - **When styling:** Apply `tailwind.md`.
-- All code rules are **additive** to the refined rules (00–08) and constraints; NEVER/DO here are as binding as in `docs/constraints/non-negotiables.md`.
+- All code rules are **additive** to the refined rules (00–08) and constraints; NEVER/DO here are as binding as in `docs/governance/constraints/non-negotiables.md`.
 
 ---
 

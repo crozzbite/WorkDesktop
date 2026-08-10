@@ -26,21 +26,21 @@ Tengo un repo de referencia con gobernanza madura (reglas refinadas, constraints
 
 ### Repos de referencia (léelos antes de generar archivos)
 
-1. **Repo principal de gobernanza** — carpeta `docs/`:
-   - `docs/00-version-index.md` — índice de reglas vigentes
-   - `docs/refined-rules/hierarchy.md` — precedencia cuando hay conflicto
-   - `docs/refined-rules/07-security-refined.md` — seguridad OWASP
-   - `docs/refined-rules/08-workflow-refined.md` — fases y STOP conditions
-   - `docs/refined-rules/09-agent-loops-refined.md` — loops TDD + review gate
-   - `docs/refined-rules/09-strict-tdd-refined.md` — micro-loop de implementación
-   - `docs/constraints/non-negotiables.md` — MUST/NEVER plano
-   - `docs/code-rules/` — reglas por lenguaje/stack
+1. **Repo principal de gobernanza** — carpeta `docs/governance/`:
+   - `docs/governance/00-version-index.md` — índice de reglas vigentes
+   - `docs/governance/refined-rules/hierarchy.md` — precedencia cuando hay conflicto
+   - `docs/governance/refined-rules/07-security-refined.md` — seguridad OWASP
+   - `docs/governance/refined-rules/08-workflow-refined.md` — fases y STOP conditions
+   - `docs/governance/refined-rules/09-agent-loops-refined.md` — loops TDD + review gate
+   - `docs/governance/refined-rules/09-strict-tdd-refined.md` — micro-loop de implementación
+   - `docs/governance/constraints/non-negotiables.md` — MUST/NEVER plano
+   - `docs/governance/code-rules/` — reglas por lenguaje/stack
 
 2. **Pack portable** — carpeta `governance-portable/`:
    - `README.md`, `MANIFEST.md`
    - `templates/AGENTS.template.md`
    - `templates/copilot-instructions.template.md`
-   - `templates/mcp.json.example`
+   - `templates/mcp.json.example` (Engram + Context7 + Azure MCP)
    - `templates/settings.vscode.json.example`
 
 3. **Políticas de mi empresa** (las adjunto o pegaré después):

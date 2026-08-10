@@ -6,27 +6,25 @@ Paquete para migrar **gobernanza y estructura agéntica** a otra máquina con **
 
 ## Qué incluye este pack
 
-| Origen (esta máquina) | Destino (otra máquina, Copilot VS Code) |
+| Origen (esta máquina / rama portable) | Destino (otra máquina, Copilot VS Code) |
 |-----------------------|----------------------------------------|
-| `.cursor/rules/*.mdc` | `.github/copilot-instructions.md` + `.github/instructions/*.instructions.md` |
-| `AGENTS.md` | `AGENTS.md` (plantilla neutral en `templates/`) |
-| `docs/refined-rules/` | `docs/governance/` (renombrar y neutralizar identidad) |
-| `docs/code-rules/` | `.github/instructions/` por stack (`typescript.instructions.md`, etc.) |
-| `docs/constraints/` | Sección en `copilot-instructions.md` o `docs/governance/constraints/` |
-| `.cursor/mcp.json` | `.vscode/mcp.json` o configuración MCP de VS Code (por proyecto) |
-| `WorkSpace/.agents/skills/` | `.github/skills/<nombre>/SKILL.md` (skills nativas de VS Code) |
-| Comandos `/sdd-*` (chat) | `.github/prompts/sdd-*.prompt.md` |
+| (histórico) `.cursor/rules/*.mdc` | Ya reemplazado por `.github/copilot-instructions.md` + `.github/instructions/` |
+| `AGENTS.md` | `AGENTS.md` (plantilla en `templates/` si regeneras) |
+| `docs/governance/` | Canon vivo — clonar la rama tal cual |
+| `docs/governance/code-rules/` | También expuesto vía `.github/instructions/` |
+| `docs/governance/constraints/` | Referenciado desde copilot-instructions |
+| MCP plantilla | `.vscode/mcp.json` desde `templates/mcp.json.example` |
+| `.github/skills/` | Ya en la rama |
+| Prompts | Preferir `.github/prompts/sdd-*.prompt.md`; `opsx-*` si hay OpenSpec |
 
-## Qué NO migrar (identidad SkullRender)
+## Qué NO migrar
 
 No copies tal cual a la otra máquina:
 
-- Nombres/personas: Lich, Gentleman, Cerbero, Phylactery, SkullRender
-- `docs/refined-rules/00-identity-refined.md` (reescribir con políticas de empresa)
-- `docs/refined-rules/programmer-profile-zzorc.md` (crear perfil de empresa)
-- `docs/refined-rules/skullrender-cicd-standard.md` (adaptar a CI/CD corporativo)
-- Rutas absolutas `C:\Users\zzorc\...` y referencias a `WorkSpace/`
-- Engram / memoria persistente (opcional; no es nativo de Copilot)
+- Nombres/personas branded: Lich, Gentleman, Cerbero, Phylactery, SkullRender (histórico en `docs/archive/`)
+- Plugin Engram / Azure de **Cursor** — usa MCP nativo (`engram setup vscode-copilot`, `azd coding-agent config`)
+- Rutas absolutas `C:\Users\…` y referencias a `WorkSpace/`
+- `docs/archive/*` como instrucciones activas
 
 ## Repos a clonar o copiar
 

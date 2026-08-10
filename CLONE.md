@@ -33,7 +33,7 @@ git checkout governance/copilot-portable
 |------|---------|
 | `AGENTS.md` | Tri-role protocol (Architect / Implementer / Security Guardian) |
 | `.github/copilot-instructions.md` | Global Copilot instructions |
-| `.github/instructions/` | Stack-specific rules (`applyTo` frontmatter) |
+| `.github/instructions/` | Stack-specific rules (`applyTo` frontmatter), incl. `azure.instructions.md` |
 | `.github/prompts/` | Structured delivery flows (explore, apply, verify, adversarial review) |
 | `docs/governance/` | Canon rules, constraints, version index |
 | `docs/company/` | Placeholders for your enterprise policies |

@@ -40,7 +40,7 @@ description: Cognitive layer + LangSmith observability. Refined Rule 05.
   In serverless: `LANGCHAIN_CALLBACKS_BACKGROUND=false` so traces flush before exit.
 - **With LangChain:** Tracing is automatic once env is set.
 - **Without LangChain:** Use `@traceable` (Python) or `traceable` (JS) and wrap the OpenAI (or other) client so calls are traced.
-- **Note:** LangSmith is part of the LangChain ecosystem; we should adopt it for agent-heavy projects (e.g. Phylactery). Complement with OpenTelemetry for system-wide observability (Rule 03).
+- **Note:** LangSmith is part of the LangChain ecosystem; adopt it for agent-heavy projects. Complement with OpenTelemetry for system-wide observability (Rule 03).
 
 ---
 

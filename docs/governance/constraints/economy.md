@@ -1,24 +1,24 @@
 ---
 version: 1.0
 current: true
-description: Cost / LLM / SaaS rules. Based on Phylactery-Bridge.
+description: Cost / LLM / SaaS rules for usage-metered products.
 ---
 
 # Economy (Cost, LLM, SaaS)
 
 **Version:** 1.0 ✓ (current)
 
-Reference project: **Phylactery-Bridge** (SaaS, B2Prosumer, Deliberations as unit of consumption).
+Reference pattern: usage-metered SaaS (B2Prosumer or B2B) with a clear unit of consumption (e.g. session, request, deliberation).
 
 ---
 
 ## MUST
 
-- **Track usage** per user or session for any LLM-backed product (e.g. tokens per ValidationSession / Deliberation).
-- **Enforce limits** per plan (e.g. 5 Deliberations/month free, 80 Plus, 300 Pro).
+- **Track usage** per user or session for any LLM-backed product (e.g. tokens per session / request).
+- **Enforce limits** per plan (document quotas in specs and company pricing docs).
 - **Route all LLM traffic** through the Gateway so every token is countable and (optionally) billable.
-- **Optimize prompts and model choice** for unit economics (e.g. high margin >60% via efficient token use).
-- **Define a clear unit of consumption** (e.g. “Deliberation”, “request”, “active user”) and document it in specs.
+- **Optimize prompts and model choice** for unit economics (efficient token use).
+- **Define a clear unit of consumption** (e.g. “request”, “active user”, product-specific unit) and document it in specs.
 
 ---
 
@@ -30,14 +30,14 @@ Reference project: **Phylactery-Bridge** (SaaS, B2Prosumer, Deliberations as uni
 
 ---
 
-## Good practices (from Phylactery-Bridge)
+## Good practices
 
 - **Unit economics:** High margin from efficient system prompts and controlled context size.
-- **Pricing tiers:** Free (trial) → Plus → Pro with clear Deliberation/request quotas.
-- **Cost tracking in architecture:** e.g. “Every token is counted and billed to the ValidationSession” (TECHNICAL_ARCHITECTURE.md).
+- **Pricing tiers:** Free (trial) → paid tiers with clear quotas.
+- **Cost tracking in architecture:** Every token counted against the billing/session entity.
 - **Database:** e.g. `tokensUsed`, `usageLastResetDate` (or equivalent) for billing and limits.
-- **MRR targets** and break-even planned per phase (e.g. Q2 beta, Q3 launch, Q4 scale); document in business/architecture docs.
+- **MRR targets** and break-even planned per phase; document in business/architecture docs.
 
 ---
 
-When adding new SaaS or LLM-backed products, align with these rules and reference Phylactery-Bridge for patterns (BFF, job queue, usage in DB, Stripe for payments).
+When adding new SaaS or LLM-backed products, align with these rules and prefer patterns such as BFF, job queue, usage in DB, and a standard payments provider (e.g. Stripe) where applicable.

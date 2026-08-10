@@ -21,7 +21,7 @@ existing canon or conflicts with the active working style (samurai pact, Ley del
 
 | Source rule | Canon equivalent | Disposition |
 |-------------|------------------|-------------|
-| RULE_000 Confidentiality_First | Rule 00 Output Sanitation (partial) | **ADOPTED** — extends to proactive export sanitization. Owner: Security Guardian (Cerbero) |
+| RULE_000 Confidentiality_First | Rule 00 Output Sanitation (partial) | **ADOPTED** — extends to proactive export sanitization. Owner: Security Guardian |
 | RULE_001 Resolve_Context | none | **ADOPTED** |
 | RULE_002 Business_Outcome_First | Rule 08 Discovery / ISO 42010 (partial) | **ADOPTED** (condensed) |
 | RULE_003 Separate_Delivery_From_Technology | none | **ADOPTED** |
@@ -40,7 +40,7 @@ existing canon or conflicts with the active working style (samurai pact, Ley del
 - **MUST:** protect confidential information; separate general knowledge from organizational knowledge; remove names, emails, internal links and identifiers from anything exported or exemplified; keep only reusable learning patterns; sanitize examples before exporting.
 - **NEVER:** export internal communications, internal documents, customer or employee information, internal metrics or strategies.
 - **Success:** output contains only transferable knowledge. **Failure:** output reveals internal or proprietary information.
-- **Owner:** Security Guardian (Cerbero) — proactive output gate, with veto.
+- **Owner:** Security Guardian — proactive output gate, with veto.
 
 ### RULE_001 — Resolve_Context `critical`
 

@@ -144,7 +144,40 @@ Flujo en chat: `/opsx:explore` → `/opsx:propose` → `/opsx:apply` → `/opsx:
 
 ---
 
-## 6. Runtime / package managers (según proyecto)
+## 6. Azure MCP + CLIs (recomendado si trabajas cloud / Bicep / AI Foundry)
+
+| Recurso | URL / comando |
+|---------|----------------|
+| **Azure MCP (npm)** | `@azure/mcp` — ver plantilla `governance-portable/templates/mcp.json.example` |
+| **Config coding-agent** | `azd coding-agent config` (instala/configura Azure MCP para el agent del repo) |
+| **Azure CLI** | https://learn.microsoft.com/cli/azure/install-azure-cli |
+| **Azure Developer CLI (azd)** | https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd |
+| **Troubleshooting MCP** | https://aka.ms/azmcp/troubleshooting |
+
+### VS Code Copilot (otra máquina, sin Cursor)
+
+1. Instala `az` y `azd`.
+2. En el repo:
+
+```powershell
+azd coding-agent config
+```
+
+3. O copia la plantilla:
+
+```powershell
+New-Item -ItemType Directory -Force -Path .vscode
+Copy-Item governance-portable\templates\mcp.json.example .vscode\mcp.json
+# Ajusta comandos/paths; reinicia VS Code
+```
+
+4. Reglas durables en repo (viajan con git): `.github/instructions/azure.instructions.md`
+
+> El **plugin Azure de Cursor** (skills Foundry/AKS/etc.) **no** se copia a VS Code. Lleva solo MCP + instrucciones en `.github/`.
+
+---
+
+## 7. Runtime / package managers (según proyecto)
 
 | Herramienta | URL | Notas |
 |-------------|-----|-------|
@@ -153,7 +186,7 @@ Flujo en chat: `/opsx:explore` → `/opsx:propose` → `/opsx:apply` → `/opsx:
 
 ---
 
-## 7. Stack local opcional (tu máquina principal — no obligatorio en empresa)
+## 8. Stack local opcional (tu máquina principal — no obligatorio en empresa)
 
 Solo si quieres terminal AI local como aquí:
 
@@ -167,21 +200,22 @@ Guía local (referencia en `master`, no en esta rama): `docs/SETUP-OPENSPEC-Y-CL
 
 ---
 
-## 8. Orden sugerido de setup (otra máquina)
+## 9. Orden sugerido de setup (otra máquina)
 
 ```
 1. git clone (público, sin cuenta personal)
 2. Abrir carpeta en VS Code + Copilot empresa
 3. .vscode/settings.json
 4. engram install → engram setup vscode-copilot
-5. (opcional) openspec init
-6. (opcional) gga init + gga install
-7. Completar docs/company/*.md
+5. Azure: az + azd → azd coding-agent config (o .vscode/mcp.json desde plantilla)
+6. (opcional) openspec init
+7. (opcional) gga init + gga install
+8. Completar docs/company/*.md
 ```
 
 ---
 
-## 9. Prompt Copilot post-setup (con herramientas)
+## 10. Prompt Copilot post-setup (con herramientas)
 
 Pega en Copilot Chat después del clone:
 
@@ -191,13 +225,15 @@ Repo clonado: governance/copilot-portable (rama independiente de master, nunca m
 Herramientas que voy a usar:
 - GitHub Copilot en VS Code (instrucciones en .github/ y AGENTS.md)
 - Engram (engram setup vscode-copilot)
+- Azure MCP (azd coding-agent config o .vscode/mcp.json)
 - [opcional] OpenSpec, GGA
 
 Ayúdame a:
 1. Verificar que Copilot carga copilot-instructions.md y AGENTS.md (References).
 2. Completar docs/company/ con mis políticas: [PEGAR].
 3. Confirmar que Engram MCP responde (mem_context o equivalente).
-4. Una fase a la vez; sin código de producto.
+4. Confirmar Azure MCP (documentation o best practices) si aplica.
+5. Una fase a la vez; sin código de producto.
 
 Lee CLONE.md y docs/SETUP-TOOLS.md primero.
 ```

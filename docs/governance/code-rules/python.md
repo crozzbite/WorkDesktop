@@ -1,7 +1,7 @@
 ---
 version: 1.0
 current: true
-description: Python DO / NEVER + snippets. SkullRender code rules (uv, mypy, ruff).
+description: Python DO / NEVER + snippets (uv, mypy, ruff).
 ---
 
 # Code Rules: Python

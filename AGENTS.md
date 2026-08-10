@@ -54,7 +54,7 @@ Full canon: `docs/governance/refined-rules/09-agent-loops-refined.md`.
 
 Use chat free first; switch to structured delivery when scope is clear.
 
-Invoke structured phases via `.github/prompts/opsx-*.prompt.md` (OpenSpec `/opsx:*`) or `.github/skills/`.
+Invoke structured phases via `.github/prompts/sdd-*.prompt.md` (portable default) or `.github/prompts/opsx-*.prompt.md` / `.github/skills/` when OpenSpec CLI is installed.
 
 ## Human gates (non-negotiable)
 

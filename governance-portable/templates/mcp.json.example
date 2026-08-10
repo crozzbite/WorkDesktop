@@ -1,9 +1,16 @@
 {
   "mcpServers": {
-    "example-tool": {
+    "engram": {
+      "command": "engram",
+      "args": ["mcp", "--tools=agent"]
+    },
+    "context7": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/allowed/dir"],
-      "cwd": "."
+      "args": ["-y", "--package=@upstash/context7-mcp@2.2.5", "--", "context7-mcp"]
+    },
+    "azure": {
+      "command": "npx",
+      "args": ["-y", "@azure/mcp@latest", "server", "start"]
     }
   }
 }

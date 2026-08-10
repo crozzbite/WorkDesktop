@@ -1,59 +1,48 @@
-# Manifest — archivos de gobernanza
+# Manifest — estado actual (governance/copilot-portable)
 
-Inventario de lo que ya está versionado en WorkDesktop y qué hacer en destino.
+Inventario post-migración tri-role. La rama **ya** trae canon bajo `docs/governance/`. Este archivo es checklist de destino / sync, no un plan de mover `docs/refined-rules/` otra vez.
 
-## Ya en git (WorkDesktop)
+## Ya listo en esta rama (no regenerar)
 
-### Reglas Cursor (origen → reemplazar en destino)
+| Path | Notas |
+|------|-------|
+| `AGENTS.md` | Tri-role Architect / Implementer / Security Guardian |
+| `docs/governance/**` | Canon + constraints + code-rules + `00-version-index.md` |
+| `.github/copilot-instructions.md` | Instrucciones globales Copilot |
+| `.github/instructions/*.instructions.md` | Stack + security |
+| `.github/prompts/sdd-*.prompt.md` | Flujo portable preferido (sin OpenSpec CLI) |
+| `.github/prompts/opsx-*.prompt.md` | Solo si instalas OpenSpec CLI |
+| `.github/skills/**` | OpenSpec + strict-tdd + adversarial/security review |
+| `docs/company/*.md` | Placeholders — completar en la máquina destino |
+| `CLONE.md` / `docs/SETUP-TOOLS.md` | Clone + tooling |
 
-| Archivo | Acción en destino |
-|---------|-------------------|
-| `.cursor/rules/skullrender-lich.mdc` | **No copiar.** Reemplazar por `copilot-instructions.md` neutral |
-| `.cursor/rules/persona-cerbero.mdc` | Neutralizar → rol Security Guardian en `AGENTS.md` |
-| `.cursor/rules/programmer-profile-zzorc.mdc` | **No copiar.** Crear perfil corporativo |
-| `.cursor/mcp.json` | Adaptar rutas → `templates/mcp.json.example` |
+## Stubs / archive (no usar como SoT)
 
-### Protocolo agéntico
+| Path | Acción |
+|------|--------|
+| `docs/00-version-index.md` | Redirect → `docs/governance/00-version-index.md` |
+| `docs/code-rules/README.md` | Redirect → `docs/governance/code-rules/` |
+| `docs/constraints/README.md` | Redirect → `docs/governance/constraints/` |
+| `docs/archive/SR-SuperPrompts.md` | Histórico branded — no copiar a empresa |
+| `SR-SuperPrompts.md` (raíz) | Stub redirect |
 
-| Archivo | Acción en destino |
-|---------|-------------------|
-| `AGENTS.md` | Usar `templates/AGENTS.template.md` como base |
+## No migrar a la otra máquina
 
-### Canon de gobernanza (`docs/`)
+| Origen | Motivo |
+|--------|--------|
+| `.cursor/rules/` | Cursor-only; esta rama no los usa |
+| Plugin Azure / Engram de Cursor | Instalar MCP nativo en VS Code (ver `templates/mcp.json.example`) |
+| `skullrender-agents` / `skullrender-skills` MCP | Marca + rutas locales |
+| `docs/archive/*` | Referencia histórica |
 
-| Archivo | Neutralizar | Prioridad |
-|---------|-------------|-----------|
-| `docs/00-version-index.md` | Sí (quitar SkullRender) | Alta |
-| `docs/refined-rules/hierarchy.md` | Mínima | Alta |
-| `docs/refined-rules/07-security-refined.md` | Mínima | Alta |
-| `docs/refined-rules/08-workflow-refined.md` | Sustituir OpenSpec/SDD por equivalente corporativo si aplica | Alta |
-| `docs/refined-rules/09-agent-loops-refined.md` | Renombrar roles; mantener loops TDD + review gate | Alta |
-| `docs/refined-rules/09-strict-tdd-refined.md` | Mínima | Media |
-| `docs/refined-rules/02-patterns-refined.md` | Mínima | Media |
-| `docs/refined-rules/05-cognitive-refined.md` | Adaptar gateway LLM a stack empresa | Media |
-| `docs/refined-rules/persona-cerbero.md` | Renombrar a security-guardian | Media |
-| `docs/refined-rules/00-identity-refined.md` | **Reescribir** con políticas empresa | Alta |
-| `docs/refined-rules/programmer-profile-zzorc.md` | **Omitir** | — |
-| `docs/refined-rules/skullrender-cicd-standard.md` | **Reescribir** CI/CD empresa | Media |
-| `docs/constraints/*` | Revisar MUST/NEVER vs políticas empresa | Alta |
-| `docs/code-rules/*` | Mover a `.github/instructions/` | Alta |
+## Destino — completar en la otra PC
 
-## Fuera de git (WorkSpace — copia manual)
+1. Completar `docs/company/*.md`
+2. Ajustar stack en `.github/copilot-instructions.md`
+3. Copiar/adaptar `templates/mcp.json.example` → `.vscode/mcp.json` (o User MCP de VS Code)
+4. Azure: `azd coding-agent config` + sección Azure en `SETUP-TOOLS.md`
+5. Engram (opcional): `engram setup vscode-copilot`
 
-| Ruta | Contenido útil | Destino sugerido |
-|------|----------------|------------------|
-| `WorkSpace/.agents/skills/openspec*/` | Flujo SDD/OpenSpec | `.github/skills/openspec/` |
-| `WorkSpace/.agents/skills/judgment-day/` | Review adversarial | `.github/skills/adversarial-review/` |
-| `WorkSpace/.agents/skills/app-security/` | OWASP | `.github/skills/security-review/` |
-| `WorkSpace/.agents/workflows/genesis-protocol.md` | Solo si haces greenfield | `docs/governance/genesis.md` |
-| `WorkSpace/.gemini/skullrender-rules.md` | Legacy | **No copiar** |
+## Sync desde `master`
 
-## Orden sugerido de implementación
-
-1. `docs/governance/` + índice de versiones
-2. `.github/copilot-instructions.md`
-3. `AGENTS.md`
-4. `.github/instructions/` por lenguaje
-5. `.github/prompts/` para flujos SDD
-6. `.github/skills/` (opcional, 2–3 skills críticos)
-7. MCP (último; depende del stack en la otra máquina)
+Cherry-pick selectivo → re-neutralizar. **Nunca merge** `master` ↔ `governance/copilot-portable`.
