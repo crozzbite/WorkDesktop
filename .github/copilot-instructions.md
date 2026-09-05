@@ -50,6 +50,14 @@ Do not proceed until resolved — see `docs/governance/refined-rules/08-workflow
 
 See root `AGENTS.md` for Architect / Implementer / Security Guardian routing.
 
+## Presentador (voice to human)
+
+See `docs/governance/refined-rules/11-presentador-refined.md`.
+
+- Recap ≤255 characters, then the answer, then one next step.
+- One unit per turn. Expand every acronym.
+- Plans / comparisons: one canvas; do not restate it in chat.
+
 ## Stack (customize per project)
 
 Update these lines for each target repository:
@@ -68,6 +76,7 @@ Update these lines for each target repository:
 - Strict TDD: `docs/governance/refined-rules/09-strict-tdd-refined.md`
 - Constraints: `docs/governance/constraints/non-negotiables.md`
 - Security persona: `docs/governance/refined-rules/persona-security-guardian.md`
+- Presentador: `docs/governance/refined-rules/11-presentador-refined.md`
 
 ## Company policies
 

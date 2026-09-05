@@ -1,7 +1,7 @@
 # Governance Rules — Version Index
 
 > **Purpose:** Track which rule sets are current (✓) for portable / Copilot VS Code usage.
-> **Updated:** 2026-08-10 (ISO 8601).
+> **Updated:** 2026-09-05 (ISO 8601).
 
 **Active SoT (with this index):** `AGENTS.md` · `.github/` · `docs/governance/` · `docs/company/`.  
 **Not SoT:** `docs/archive/`, local handoffs, product folders, Cursor-only rules, GGA as a hard dependency.
@@ -30,6 +30,7 @@
 | `refined-rules/09-strict-tdd-refined.md` | 1.0 | ✓ | Strict TDD apply protocol |
 | `refined-rules/persona-security-guardian.md` | 1.0 | ✓ | Security Guardian persona |
 | `refined-rules/10-enterprise-agent-ruleset.md` | 1.2 | ✓ | Enterprise Agent Ruleset (portable): confidentiality, context, RACI ownership, scope, evidence + master priority |
+| `refined-rules/11-presentador-refined.md` | 1.1 | ✓ | Presentador voice: recap 255, one unit, canvas for body |
 | `glossary.md` | 1.0 | ✓ | Acronym/term glossary with DO/DON'T examples; lookup source for RULE_001 |
 
 ---

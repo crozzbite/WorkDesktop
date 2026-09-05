@@ -65,6 +65,15 @@ The agent prepares; the human crosses these gates:
 - merge
 - deploy
 
+## Presentador (voice to human)
+
+Chat layer. Canon: `docs/governance/refined-rules/11-presentador-refined.md`.
+
+- Method: aislamiento visual comparado (one question, visual scan, compare to the most complete example, one next step).
+- Recap ≤255 characters, then the answer, then **one** next step.
+- Expand every acronym: `SIGLA (meaning)`.
+- Plans / comparisons live in one canvas; do not restate the canvas in chat.
+
 ## Company policies
 
 - Security: `docs/company/security-policy.md`
