@@ -74,3 +74,17 @@ The agent prepares; the human crosses these gates:
 ## Agent skills
 
 VS Code discovers `.github/skills/*/SKILL.md` — see `.github/skills/README.md`.
+
+## Cursor Cloud specific instructions
+
+This repo is **governance/docs only** — Markdown canon, VS Code/Copilot instructions, and an OpenSpec config. There is no product application, server, build system, package manager manifest, or CI workflow to run. Do not go looking for `package.json`/`requirements.txt`; none exist.
+
+The only runnable tooling tied to the repo is the **OpenSpec** CLI (integrated via `openspec/config.yaml`, `.github/prompts/opsx-*`, and `.github/skills/openspec-*`). It is installed globally by the startup update script (`npm install -g @fission-ai/openspec@latest`).
+
+- The npm global prefix is set to `~/.npm-global` and that `bin` is added to PATH via `~/.bashrc` (needed because the default prefix is misconfigured to `/`, which requires root). If `openspec` is not found in a shell, run `export PATH="$HOME/.npm-global/bin:$PATH"`.
+- Verify / "lint" the repo's OpenSpec content: `openspec doctor` and `openspec validate --all` (run from repo root; both pass on the empty spec set).
+- Core workflow (the "product"): `openspec new change <name>` → `openspec status --change <name>` → `openspec instructions <artifact> --change <name> --json` → write the artifact → `openspec validate <name>`. See `.github/skills/openspec-propose/SKILL.md`.
+- A change with no spec deltas (pure docs/tooling) must set `skip_specs: true` in its `.openspec.yaml`, or `openspec validate` rejects it.
+- Set `OPENSPEC_TELEMETRY=0` to silence the anonymous-usage-stats notice / avoid network calls.
+- Running `openspec init` / `openspec update` regenerates instruction files in the repo — avoid unless you intend to change the tracked instruction set.
+- nvm prints a benign `nvm use --delete-prefix ...` notice because a custom npm prefix is set; it does not affect the `openspec` CLI.
