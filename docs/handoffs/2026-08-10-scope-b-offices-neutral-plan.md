@@ -2,7 +2,7 @@
 
 > **Status:** PLAN (authoring, local until Fase 1 artifacts). Not Capa A SoT.  
 > **Depends on:** Capa A = `governance/vscode-copilot-ready`.  
-> **Updated:** 2026-08-10 (post–Judgment Day Round 1 fixes)  
+> **Updated:** 2026-09-11 (Fase 4 commit/push closed after SAE PR merge)  
 > **JD:** Round 1 REQUEST_CHANGES → corrections below applied before Fase 1.
 
 ## Goal
@@ -105,11 +105,11 @@ Accelerator ignora `out/**`. Por tanto:
 - [x] Smoke B: `smoke-offices.ps1` → Office*×10 + loadAll=10; MCP `offices-neutral` en `.vscode/mcp.json`
 - [x] FAIL previo = solo Capa A (fail-loud esperado); reintento en B = PASS ~9/10
 
-### Fase 4 — Empaquetar B2 ← DONE (local; await commit/push)
+### Fase 4 — Empaquetar B2 ← DONE (merged 2026-09-05)
 - [x] Promote `dist/legion-neutral/` (shipped; outside `out/**`)
 - [x] Scripts prefer `dist` then `out`; MCP template sin absolutos
 - [x] README accelerator + Agents: install/use/verify/deploy + LLM SETUP PROMPT
-- [ ] Human: commit + push `office-accelerator` and `SkullRender-Agents`
+- [x] Human: commit + push `office-accelerator` and `SkullRender-Agents` (PR #1 merged each)
 
 ### Fase 5 — PC trabajo
 - [ ] Clone siblings + paste README setup prompts in Copilot
